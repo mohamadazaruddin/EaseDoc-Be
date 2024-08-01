@@ -5,9 +5,9 @@ const bodyParser = require("body-parser");
 const mongoDB = require("./src/config/db");
 
 //  calling routes
-// const userRoutes = require("./src/routes/user.route");
-// const commentRoutes = require("./src/routes/comment.route");
-// const postRoutes = require("./src/routes/post.route");
+const userRoutes = require("./src/routes/user.route");
+const consultationRoutes = require("./src/routes/consultation.route");
+const prescriptionRoutes = require("./src/routes/prescription.route");
 //end
 app.use(bodyParser.json());
 mongoDB(); // Db invok
@@ -23,8 +23,8 @@ app.get("/", (req, res) => {
   res.json({ success: true });
 });
 
-// app.use("/users", userRoutes);
-// app.use("/comment", commentRoutes);
-// app.use("/post", postRoutes);
+app.use("/users", userRoutes);
+app.use("/consultation", consultationRoutes);
+app.use("/prescription", prescriptionRoutes);
 
 module.exports = app;
