@@ -35,6 +35,8 @@ const createUser = (async = async (req, res) => {
       years_of_experience,
       role,
       phone_number,
+      history_of_surgery,
+      history_of_illness,
     } = req.body;
     const userExists = await User.findOne({ email });
 
@@ -52,6 +54,8 @@ const createUser = (async = async (req, res) => {
       years_of_experience,
       role,
       phone_number,
+      history_of_surgery,
+      history_of_illness,
     });
 
     await newUser.save();

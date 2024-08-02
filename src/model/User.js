@@ -31,6 +31,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  history_of_surgery: {
+    type: String,
+    required: false,
+  },
+  history_of_illness: {
+    type: String,
+    required: false,
+  },
 
   accountCreatedAt: {
     type: Date,
