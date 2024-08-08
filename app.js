@@ -8,6 +8,7 @@ const mongoDB = require("./src/config/db");
 const userRoutes = require("./src/routes/user.route");
 const consultationRoutes = require("./src/routes/consultation.route");
 const prescriptionRoutes = require("./src/routes/prescription.route");
+const taskRoutes = require("./src/routes/tasks.route");
 //end
 app.use(bodyParser.json());
 mongoDB(); // Db invok
@@ -26,5 +27,6 @@ app.get("/", (req, res) => {
 app.use("/users", userRoutes);
 app.use("/consultation", consultationRoutes);
 app.use("/prescription", prescriptionRoutes);
+app.use("/task", taskRoutes);
 
 module.exports = app;
